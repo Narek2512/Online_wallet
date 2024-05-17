@@ -1,0 +1,38 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="W391" />
+          <option value="E111" />
+          <option value="E501" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyShadowingBuiltinsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredNames">
+        <list>
+          <option value="input" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="main.x1" />
+          <option value="main.y1" />
+          <option value="main.x2" />
+          <option value="main.y2" />
+          <option value="main.last" />
+          <option value="main.Narek" />
+          <option value="str.len" />
+          <option value="main.multiplied_number" />
+          <option value="main.multipli_number" />
+          <option value="main.number_sum" />
+          <option value="str.__setitem__" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
