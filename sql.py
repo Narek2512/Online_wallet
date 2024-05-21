@@ -62,23 +62,13 @@ def get_user_by_id(id):
 
 
 
-def update_symbol(id, symbol):
+def update_country(id, symbol, country_name, value):
     try:
-        sql = "UPDATE `users` SET symbol = %s WHERE id = %s"
-        cursor.execute(id, symbol)
+        sql = "UPDATE `users` SET country = %s, symbol = %s, value = %s  WHERE id = %s"
+        cursor.execute(sql, (country_name, symbol, value, id))
         connection.commit()
         return True
 
     except:
         return False
 
-
-def update_value(id, value):
-    try:
-        sql = "UPDATE `users` SET value = %s WHERE id = %s"
-        cursor.execute(id, value)
-        connection.commit()
-        return True
-
-    except:
-        return False

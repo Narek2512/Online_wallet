@@ -3,7 +3,7 @@ import random
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from sql import add_user, delete_user, update_password, update_balance, get_user, get_user_by_id, update_symbol, update_value
+from sql import add_user, delete_user, update_password, update_balance, get_user, get_user_by_id, update_country
 
 
 while True:
@@ -225,27 +225,23 @@ To login Enter 'l':
                         country_name = input("Enter the name of the country code where you are located: ")
                         res = requests.get(f'https://restcountries.com/v3.1/alpha/{country_name}').json()
                         currencies = res[0]['currencies']
-
-
-
                         currencies_code = currencies.keys()
-
                         for code in currencies_code:
                             currencies_code = code
 
-
-                        print(currencies[currencies_code['symbol']])
+                        print(country_name)
+                        print(currencies[currencies_code]['symbol'])
                         print(currencies_code)
-                        # if currencies[currencies_code["symbol"]] == "" or currencies_code == "":
-                        #     print("Country Error!")
+                        if currencies[currencies_code]["symbol"] == "" or currencies_code == "":
+                            print("Country change Error!")
 
-                    #     else:
-                    #         update_symbol(i[0], currencies[currencies_code["symbol"]])
-                    #         update_value(i[0], currencies_code)
-                    #
-                    #
-                    # elif command == "log out":
-                    #     break
+                        else:
+                            update_country(i[0], currencies[currencies_code]['symbol'], country_name.upper(), currencies_code)
+                            print("Country changed")
+
+
+                    elif command == "log out":
+                        break
 
                     else:
                         print("Command Error!")
